@@ -1,5 +1,7 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from rest_framework import serializers
+
+from core.models import Profile
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -7,7 +9,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('url', 'username', 'email', 'groups')
 
-# class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = Profile
-#         fields = ('url', 'username', 'email', 'groups', 'avatar')
+
+class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('url', 'user')
