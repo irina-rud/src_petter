@@ -131,3 +131,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/riv/petter/collected_static/'
 STATICFILES_DIRS = ('/home/riv/petter/src/static/', )
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
