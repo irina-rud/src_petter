@@ -3,8 +3,7 @@ from rest_framework import serializers
 from models import Like
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class LikeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Like
-        fields = ('likes', 'dislikes')
-
+        fields = ('author', 'date_created', 'content_type', 'object_id')

@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from models import Post
+from models import Friendship
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Post
-        fields = ('author', 'date_created', 'text', 'title')
+        model = Friendship
+        fields = ('requester', 'replier', 'text', 'title')
