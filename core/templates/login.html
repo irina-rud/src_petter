@@ -5,8 +5,7 @@
     <title>Login</title>
 </head>
 <body>
-<p style="margin: 0.4em;">
-    <a href="{% url socialauth_begin 'vkontakte-oauth2' %}">Enter VK</a>
-</p>
+<div></div>
+<a href="{% url 'social:begin' "vk-oauth2" %}" class="vk sn-logo">VK login</a>
 </body>
 </html>

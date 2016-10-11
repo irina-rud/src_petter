@@ -42,6 +42,7 @@ router.register(r'pets', views.PetViewSet)
 from post import views
 router.register(r'posts', views.PostViewSet)
 
+from django.contrib.auth.views import logout, login
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -49,5 +50,6 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
-    url(r'^social/', include('social_auth.urls')),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^auth/$', login, {'template_name': 'login.html'}, name="auth"),
 ]
