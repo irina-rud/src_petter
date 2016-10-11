@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'post',
     'pet',
     'message',
-    'friendship'
+    'friendship',
+    'social.apps.django_app.default'
 ]
 
 MIDDLEWARE = [
@@ -57,6 +58,34 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    #'social_auth.backends.contrib.vkontakte.VKontakteOAuth2Backend',
+    #'social_auth.backends.facebook.FacebookBackend',
+    #'social_auth.backends.google.GoogleOAuth2Backend',
+    #'social_auth.backends.twitter.TwitterBackend',
+    #'social_auth.backends.contrib.yandex.YandexOAuth2Backend',
+    #'social_auth.backends.contrib.mailru.MailruBackend',
+    #'social_auth.backends.contrib.odnoklassniki.OdnoklassnikiBackend',
+    #'django.contrib.auth.backends.ModelBackend',
+    #'social_auth.backends.contrib.vk.VKOAuth2Backend',
+    #'social.backends.vk.VKOAuth2',
+    'social.backends.vk.VKOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend'
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
+
+VK_APP_ID = '5661461'
+VK_API_SECRET = '35753qL0Hlm6wG7NFtZB'
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '5661461'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '35753qL0Hlm6wG7NFtZB'
 
 ROOT_URLCONF = 'application.urls'
 
