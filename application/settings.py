@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'message',
     'friendship',
     'tag',
-    'social.apps.django_app.default'
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE = [
@@ -73,20 +73,31 @@ AUTHENTICATION_BACKENDS = (
     #'social.backends.vk.VKOAuth2',
     'social.backends.vk.VKOAuth2',
     'social.backends.facebook.FacebookOAuth2',
-    'social.backends.google.GoogleOAuth2',
-    'django.contrib.auth.backends.ModelBackend'
+    #'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
 )
+VK_APP_ID = '5661461'
+VK_API_SECRET = '35753qL0Hlm6wG7NFtZB'
+
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', ]
+SOCIAL_AUTH_VK_OAUTH2_EXTRA_DATA = ['email', ]
+SOCIAL_AUTH_VK_OAUTH2_KEY = '5661461'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '35753qL0Hlm6wG7NFtZB'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', ]
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['email', ]
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
+
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
+SOCIAL_AUTH_SANITIZE_REDIRECTS = False
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
 )
-
-VK_APP_ID = '5661461'
-VK_API_SECRET = '35753qL0Hlm6wG7NFtZB'
-
-SOCIAL_AUTH_VK_OAUTH2_KEY = '5661461'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = '35753qL0Hlm6wG7NFtZB'
 
 ROOT_URLCONF = 'application.urls'
 
@@ -117,7 +128,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'petter_db',
         'USER': 'postgres',
-        'PASSWORD': 'Bhbirf145',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -162,8 +173,8 @@ USE_TZ = True
 # <a target="_blank" href="https: docs.djangoproject.com="" en="" 1.8="" howto="" static-files="" "="">https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/riv/petter/collected_static/'
-STATICFILES_DIRS = ('/home/riv/petter/src/static/', )
+STATIC_ROOT = '/home/kymid/src_petter/collected_static/'
+STATICFILES_DIRS = ('/home/kymid/src_petter/static/', )
 
 try:
     from local_settings import *
