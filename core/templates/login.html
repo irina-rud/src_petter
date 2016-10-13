@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Авторизация</title>
 </head>
 <body>
-<div></div>
-<a href="{% url 'social:begin' "vk-oauth2" %}" class="vk sn-logo">VK login</a>
+    <div class="user_auth">
+        <a href="{% url "social:begin" "vk-oauth2" %}" class="button">
+            Войти с помощью Вконтакте
+        </a>
+    </div>
 </body>
 </html>
