@@ -42,6 +42,10 @@ router.register(r'pets', views.PetViewSet)
 from post import views
 router.register(r'posts', views.PostViewSet)
 
+from tag import views
+router.register(r'tags', views.TegViewSet)
+
+
 from django.contrib.auth.views import logout, login
 
 # Wire up our API using automatic URL routing.
