@@ -4,6 +4,8 @@ from models import Post
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
+    author = serializers.ReadOnlyField(source='author.id')
+
     class Meta:
         model = Post
-        fields = ('author', 'date_created', 'text', 'title')
+        fields = ('author', 'date_created', 'text', 'title', 'location_latitude', 'location_longitude')

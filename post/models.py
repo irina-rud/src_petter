@@ -11,7 +11,8 @@ class Post(models.Model):
     date_created = models.DateTimeField(verbose_name=u'Дата публикации', auto_now_add=True)
     title = models.CharField(verbose_name=u'Заголовок', max_length=140)
     text = models.TextField(verbose_name=u'Текст')
-    # location = models.PointField(verbose_name=u'Место')
+    location_latitude = models.FloatField(verbose_name=u'Широта', default='-1')
+    location_longitude = models.FloatField(verbose_name=u'Долгота', default='-1')
 
     def __unicode__(self):
         return self.title
