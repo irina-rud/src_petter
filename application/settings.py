@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'pet',
     'message',
     'friendship',
+    'tag',
     'social.apps.django_app.default'
 ]
 

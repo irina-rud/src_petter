@@ -4,7 +4,7 @@ from rest_framework import viewsets
 from pet.models import Pet
 from pet.permissions import IsOwnerOrReadOnly
 from pet.serializers import PetSerializer
-from post import permissions
+from rest_framework import permissions
 
 
 class PetViewSet(viewsets.ModelViewSet):
