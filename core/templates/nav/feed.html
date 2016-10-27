@@ -1,0 +1,41 @@
+{% extends "base/base.html" %}
+
+{% block include-css %}
+    {% load staticfiles %}
+    <link href="{% static "css/feed.css" %}" rel="stylesheet">
+    <link href="{% static "css/sidebar.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Petter Pet{% endblock %}
+
+{% block content %}
+
+    <div class="content_container">
+        <div class="row">
+          <div class="col-md-2">
+              {% include "nav/sidebar.html" %}
+          </div>
+          <div class="profile col-md-10">
+
+              <div class="feed_post_list">
+                  {% for post in post_list %}
+                  <div class="feed_post">
+                      <p>{{ post|linebreaksbr }}</p>
+                  </div>
+                  {% endfor %}
+              </div>
+
+              <div id="root"></div>
+
+          </div>
+        </div>
+    </div>
+
+    {% load staticfiles %}
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="{% static "js/browser.min.js" %}"></script>
+    <script src="{% static "js/EventEmitter.js" %}"></script>
+    <script type="text/babel" src="{% static "js/feed.js" %}"></script>
+
+{% endblock %}

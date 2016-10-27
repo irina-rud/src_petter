@@ -1,0 +1,7 @@
+.content_container {
+    width: 80%;
+}
+
+.profile_avatar img{
+    max-width: 200px;
+}

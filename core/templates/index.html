@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+
+{% block include-css %}
+    {% load staticfiles %}
+    <link href="{% static "css/index.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}PetterPet{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        {% if user.is_authenticated %}
+            {% include "nav/profile.html" %}
+        {% else %}
+            {% include "login.html" %}
+        {% endif %}
+    </div>
+
+{% endblock %}
