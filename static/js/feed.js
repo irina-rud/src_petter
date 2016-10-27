@@ -130,7 +130,6 @@ var App = React.createClass({
     fetch('/router/posts').then( function(response) {
       response.json().then(function (data) {
         console.log(data);
-        //my_news = data;
         self.setState({news: data});
       })
     }).catch(function (err) {

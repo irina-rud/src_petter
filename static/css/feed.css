@@ -82,7 +82,7 @@ p {
 
 .app h3 {
   text-align: center;
-  min-width: 400px;
+  width: 100%;
 }
 
 .sidebar p {

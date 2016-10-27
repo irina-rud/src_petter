@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af8853de-9ce8-459c-bea8-e7bcd17d1b41" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/templates/nav/feed.html" afterPath="$PROJECT_DIR$/core/templates/nav/feed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/feed.css" afterPath="$PROJECT_DIR$/static/css/feed.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/profile.css" afterPath="$PROJECT_DIR$/static/css/profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/feed.js" afterPath="$PROJECT_DIR$/static/js/feed.js" />
     </list>
     <ignored path="src_petter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +34,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="701">
@@ -39,16 +42,6 @@
               <folding>
                 <element signature="e#645#677#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/post/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -100,8 +93,18 @@
       <file leaf-file-name="feed.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/templates/nav/feed.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="357">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/profile.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -120,8 +123,18 @@
       <file leaf-file-name="feed.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/feed.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
+            <state relative-caret-position="713">
+              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feed.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/feed.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="692">
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -160,19 +173,19 @@
         <option value="$PROJECT_DIR$/core/templates/feed.html" />
         <option value="$PROJECT_DIR$/core/templates/base/base.html" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
-        <option value="$PROJECT_DIR$/static/css/profile.css" />
         <option value="$PROJECT_DIR$/static/css/sidebar.css" />
         <option value="$PROJECT_DIR$/core/templates/nav/sidebar.html" />
         <option value="$PROJECT_DIR$/post/models.py" />
-        <option value="$PROJECT_DIR$/static/css/feed.css" />
         <option value="$PROJECT_DIR$/core/templates/base/header.html" />
         <option value="$PROJECT_DIR$/core/templates/index.html" />
         <option value="$PROJECT_DIR$/core/templates/nav/profile.html" />
-        <option value="$PROJECT_DIR$/core/templates/nav/feed.html" />
         <option value="$PROJECT_DIR$/core/serializers.py" />
         <option value="$PROJECT_DIR$/core/views.py" />
-        <option value="$PROJECT_DIR$/static/js/feed.js" />
         <option value="$PROJECT_DIR$/application/urls.py" />
+        <option value="$PROJECT_DIR$/static/css/feed.css" />
+        <option value="$PROJECT_DIR$/static/js/feed.js" />
+        <option value="$PROJECT_DIR$/core/templates/nav/feed.html" />
+        <option value="$PROJECT_DIR$/static/css/profile.css" />
       </list>
     </option>
   </component>
@@ -931,14 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/post/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -962,14 +967,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/feed.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="88" column="14" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,14 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/django/contrib/auth/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
@@ -1065,30 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/templates/nav/feed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/feed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cat.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1101,6 +1066,54 @@
           <folding>
             <element signature="e#645#677#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/feed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/feed.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/templates/nav/feed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
