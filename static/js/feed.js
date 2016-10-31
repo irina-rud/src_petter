@@ -1,5 +1,27 @@
 'use strict';
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+$(function () {
+    $.ajaxSetup({
+        headers: { "X-CSRFToken": getCookie("csrftoken") }
+    });
+});
+
 window.ee = new EventEmitter();
 
 var Article = React.createClass({
@@ -71,12 +93,28 @@ var Add = React.createClass({
     var title = titleEl.value;
 
     var item = [{
-      //author: {{ user.name }},
-      title: title,
-      text: text
+      "author": "http://localhost:8000/router/users/2/",
+      "title": title,
+      "text": text
     }];
 
     window.ee.emit('News.add', item);
+
+    console.log('try to ajax');
+    $.ajax({
+      url: 'http://localhost:8000/router/posts/',
+      dataType: 'json',
+      method: 'POST',
+      data: item[0],
+      success: function(data) {
+        console.log('all is good, data =  ', data)
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.log(status);
+        console.log(err);
+        console.log(xhr.responseText);
+      }.bind(this)
+    });
 
     textEl.value = '';
     titleEl.value = '';
