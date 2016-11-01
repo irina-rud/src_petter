@@ -3,27 +3,14 @@
     justify-content: center;
 }
 
-.content_container {
-    width: 65%;
-    margin-top: 2vh;
-}
-
 .none {
   display: none !important;
-}
-
-body {
-  font-family: sans-serif;
-}
-
-p {
-  margin: 0 0 5px;
 }
 
 .article {
   background: #FFF;
   border: 1px solid rgba(0, 89, 181, 0.82);
-  width: 600px;
+  width: 33vw;
   margin: 0 0 5px;
   box-shadow: 2px 2px 5px -1px rgb(0, 81, 202);
   padding: 3px 5px;
@@ -83,8 +70,4 @@ p {
 .app h3 {
   text-align: center;
   width: 100%;
-}
-
-.sidebar p {
-  padding: 5px;
 }
