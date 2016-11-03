@@ -102,7 +102,7 @@ var Add = React.createClass({
 
     console.log('try to ajax');
     $.ajax({
-      url: 'http://localhost:8000/router/posts/',
+      url: '../router/posts/',
       dataType: 'json',
       method: 'POST',
       data: item[0],
