@@ -25,7 +25,7 @@ SECRET_KEY = '26)9n&-^@t@*ciau$d*1@++@7blbkfhf!e9mkj1pcqy&-oro%j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['petterpet.com']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
     # 'django.contrib.gis',
     'core',
@@ -74,7 +75,7 @@ AUTHENTICATION_BACKENDS = (
     #'social_auth.backends.contrib.mailru.MailruBackend',
     #'social_auth.backends.contrib.odnoklassniki.OdnoklassnikiBackend',
     #'django.contrib.auth.backends.ModelBackend',
-    #'social_auth.backends.contrib.vk.VKOAuth2Backend',
+   #'social_auth.backends.contrib.vk.VKOAuth2Backend',
     #'social.backends.vk.VKOAuth2',
     'social.backends.vk.VKOAuth2',
     'social.backends.facebook.FacebookOAuth2',
@@ -137,8 +138,8 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '',
-    }
+	'PORT': '',
+    },
 }
 
 
@@ -180,10 +181,11 @@ USE_TZ = True
 # <a target="_blank" href="https: docs.djangoproject.com="" en="" 1.8="" howto="" static-files="" "="">https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/kymid/src_petter/collected_static/'
-STATICFILES_DIRS = ('/home/kymid/src_petter/static/', )
+STATIC_ROOT = '/home/ubuntu/src_petter/collected_static/'
+STATICFILES_DIRS = ('/home/ubuntu/src_petter/static/', )
 
 try:
     from local_settings import *
 except ImportError:
     pass
+

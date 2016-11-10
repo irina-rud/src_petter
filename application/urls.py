@@ -38,6 +38,7 @@ class GroupSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
+        fields = ('title', 'text')
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):

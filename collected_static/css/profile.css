@@ -1,0 +1,7 @@
+.profile_avatar img{
+    max-width: 200px;
+}
+
+.profile_images, .profile_posts {
+    margin-top: 4vh;
+}
