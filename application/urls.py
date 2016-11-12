@@ -36,9 +36,12 @@ class GroupSerializer(serializers.ModelSerializer):
         model = Group
 
 class PostSerializer(serializers.ModelSerializer):
+    def validate_author(self, data):
+        return True
+
     class Meta:
         model = Post
-        fields = ('title', 'text')
+        read_only_fields = ('author', )
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
@@ -53,16 +56,19 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated, TokenHasScope]
+    # permission_classes = [permissions.IsAuthenticated, TokenHasScope]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
 
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'profiles', views.ProfileViewSet)
-router.register(r'posts', views.PostViewSet)
+router.register(r'posts', PostViewSet)
 
 
 from django.contrib.auth.views import logout, login

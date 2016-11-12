@@ -97,7 +97,7 @@ var Add = React.createClass({
       "text": text
     }];
 
-    window.ee.emit('News.add', item);
+    //window.ee.emit('News.add', item);
 
     console.log('try to ajax');
     $.ajax({

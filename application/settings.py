@@ -181,8 +181,8 @@ USE_TZ = True
 # <a target="_blank" href="https: docs.djangoproject.com="" en="" 1.8="" howto="" static-files="" "="">https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/ubuntu/src_petter/collected_static/'
-STATICFILES_DIRS = ('/home/ubuntu/src_petter/static/', )
+STATIC_ROOT = '/home/kymid/src_petter/collected_static/'
+STATICFILES_DIRS = ('/home/kymid/src_petter/static/', )
 
 try:
     from local_settings import *
