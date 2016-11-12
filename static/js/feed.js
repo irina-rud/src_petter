@@ -97,16 +97,14 @@ var Add = React.createClass({
       "text": text
     }];
 
-    //window.ee.emit('News.add', item);
-
-    console.log('try to ajax');
     $.ajax({
       url: '../router/posts/',
       dataType: 'json',
       method: 'POST',
       data: item[0],
       success: function(data) {
-        console.log('all is good, data =  ', data)
+        //console.log('all is good, data =  ', data);
+        window.ee.emit('add_news');
       }.bind(this),
       error: function(xhr, status, err) {
         console.log('status: ' + status);
@@ -156,6 +154,8 @@ var Add = React.createClass({
   }
 });
 
+var app_render_interval;
+var timeout = 5000;
 var App = React.createClass({
   getInitialState: function() {
     return {
@@ -166,7 +166,6 @@ var App = React.createClass({
     var self = this;
     fetch('/router/posts').then( function(response) {
       response.json().then(function (data) {
-        console.log(data);
         self.setState({news: data});
       })
     }).catch(function (err) {
@@ -175,14 +174,21 @@ var App = React.createClass({
   },
   componentDidMount: function() {
     this.fetchData();
+
     var self = this;
-    window.ee.addListener('News.add', function(item) {
-      var nextNews = item.concat(self.state.news);
-      self.setState({news: nextNews});
+    app_render_interval = setTimeout(function fetch_news() {
+      self.fetchData();
+      app_render_interval = setTimeout(fetch_news, timeout);
+    }, timeout);
+
+    window.ee.addListener('add_news', function() {
+      self.fetchData();
+      console.log('I am in add_news');
     });
   },
   componentWillUnmount: function() {
-    window.ee.removeListener('News.add');
+    clearInterval(app_render_interval);
+    window.ee.removeListener('add_news')
   },
   render: function() {
     return (
