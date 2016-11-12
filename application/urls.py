@@ -27,33 +27,14 @@ from post.views import Post
 from post.views import PostViewSet
 from oauth2_provider.ext.rest_framework import TokenHasReadWriteScope, TokenHasScope
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-
-class GroupSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Group
-
 class PostSerializer(serializers.ModelSerializer):
     def validate_author(self, data):
         return True
 
     class Meta:
         model = Post
+        fields = ('title', 'text', 'author', 'date_created')
         read_only_fields = ('author', )
-
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated, TokenHasReadWriteScope]
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-class GroupViewSet(viewsets.ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated, TokenHasScope]
-    required_scopes = ['groups']
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     # permission_classes = [permissions.IsAuthenticated, TokenHasScope]
@@ -62,7 +43,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
