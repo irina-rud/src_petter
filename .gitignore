@@ -2,4 +2,4 @@
 local_settings.py
 requirements.txt
 /env
-idea/*
+.idea/*
