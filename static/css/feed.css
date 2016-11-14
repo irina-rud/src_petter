@@ -10,7 +10,6 @@
 .article {
   background: #FFF;
   border: 1px solid rgba(0, 89, 181, 0.82);
-  width: 33vw;
   margin: 0 0 5px;
   box-shadow: 2px 2px 5px -1px rgb(0, 81, 202);
   padding: 3px 5px;
@@ -18,28 +17,35 @@
 
 .news {
   margin-top: 2vh;
+  width: 80%;
 }
 
 .news_author {
   text-decoration: none;
   color: #007DDC;
   position: absolute;
+  font-size: 1.25em;
 }
 
 .news_text {
   padding: 5px 5px 10px 5px;
+  font-size: 1.25em;
 }
 
 .news_title p{
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.5em;
 }
 
 .add {
   margin: 0 5px 5px 0;
-  width: 70%;
+  width: 80%;
   padding: 5px;
+}
+
+.add button {
+  font-size: 1.19em;
 }
 
 .add_title, .add_text, .add_btn {
@@ -70,4 +76,18 @@
 .app h3 {
   text-align: center;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .news_author {
+    font-size: 1.1em;
+  }
+
+  .news_text {
+    font-size: 1.1em;
+  }
+
+  .news_title p{
+    font-size: 1.4em;
+  }
 }

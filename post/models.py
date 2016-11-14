@@ -3,13 +3,21 @@ from __future__ import unicode_literals
 
 from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import User
 
 # from django.contrib.gis.db import models
 from pet.models import Pet
 
+class UserFullName(User):
+    class Meta:
+        proxy = True
+
+    def __unicode__(self):
+        return self.get_username()
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=u'Автор', related_name='posts')
+    #author_name = UserFullName(author)
     date_created = models.DateTimeField(verbose_name=u'Дата публикации', auto_now_add=True)
     title = models.CharField(verbose_name=u'Заголовок', max_length=140)
     text = models.TextField(verbose_name=u'Текст')

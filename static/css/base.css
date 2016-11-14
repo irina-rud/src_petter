@@ -1,18 +1,14 @@
 .content_container {
-    margin-top: 10vh;
+    margin-top: 5em;
     min-height: 78vh;
 }
 
 footer .container {
-    padding-top: 3vh;
+    padding-top: 1%;
 }
 
 .header_container, .content_container{
-    padding: 0 15vw 0 15vw;
-}
-
-.content_container {
-    width: 80%;
+    padding: 0 12% 0 12%;
 }
 
 .content_container .row{
@@ -21,4 +17,33 @@ footer .container {
 
 body {
     overflow-y: scroll;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-content {
+    display: flex;
+    margin: 0;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    header .navbar-form {
+        margin: 0;
+    }
+
+    .header_container {
+        padding: 0;
+    }
 }

@@ -42,7 +42,7 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        serializer.save(author=self.request.user, author_name=self.request.user.get_username())
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
