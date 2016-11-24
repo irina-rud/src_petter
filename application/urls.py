@@ -20,43 +20,53 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from core import views
 
+from rest_framework import permissions, routers, serializers, viewsets
+from django.contrib.auth.models import User, Group
+from django.views.generic import TemplateView
+from post.views import Post
+from post.views import PostViewSet
+from oauth2_provider.ext.rest_framework import TokenHasReadWriteScope, TokenHasScope
+
+class PostSerializer(serializers.ModelSerializer):
+    def validate_author(self, data):
+        return True
+
+    class Meta:
+        model = Post
+        fields = ('title', 'text', 'author', 'date_created')
+        read_only_fields = ('author', )
+
+class PostViewSet(viewsets.ModelViewSet):
+    # permission_classes = [permissions.IsAuthenticated, TokenHasScope]
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user, author_name=self.request.user.get_username())
+
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'profiles', views.ProfileViewSet)
-
-from chat import views
-
-router.register(r'chats', views.ChatViewSet)
-
-from like import views
-
-router.register(r'likes', views.LikeViewSet)
-
-from message import views
-router.register(r'messages', views.MessageViewSet)
-
-from pet import views
-router.register(r'pets', views.PetViewSet)
-
-from post import views
-router.register(r'posts', views.PostViewSet)
-
-from tag import views
-router.register(r'tags', views.TegViewSet)
+router.register(r'posts', PostViewSet)
 
 
 from django.contrib.auth.views import logout, login
+from core import views
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    url(r'^router/', include(router.urls)),
+    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^feed/', views.feed),
+    url(r'^logout/', logout, name="logout"),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     #url(r'', include('social.apps.django_app.urls', namespace='social')),
     url(r'^auth/$', login, {'template_name': 'login.html'}, name="auth"),
     url(r'^social/', include('social.apps.django_app.urls', namespace='social')),
-    url(r'^social_auth/', login, {'template_name': 'login.html'}),
-    url(r'^congrat/', login, {'template_name': 'congrat.html'}),
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
+
+

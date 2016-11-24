@@ -1,0 +1,18 @@
+.sidebar p {
+    font-size: 1.3em;
+}
+
+.sidebar__nav {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+
+    .sidebar__nav {
+        display: block;
+    }
+}
+

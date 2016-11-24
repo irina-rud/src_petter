@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-4">
+      {% include "nav/sidebar.html" %}
+  </div>
+  <div class="profile col-md-8">
+
+      <div class="row">
+          <div class="profile_avatar col-md-5">
+              {% load staticfiles %}
+              <img src="{% static "img/default.jpg" %}">
+          </div>
+          <div class="profile_information col-md-offset-8">
+              <p>20 лет</p>
+              <p>МФТИ</p>
+              <p>ФИВТ</p>
+          </div>
+      </div>
+
+    <div class="profile_images">
+        <p>У данного пользователя пока что нет фотографий</p>
+    </div>
+
+    <div class="profile_posts">
+        <p>У данного пользователя пока что нет постов</p>
+    </div>
+
+  </div>
+</div>

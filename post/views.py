@@ -7,11 +7,18 @@ from post.models import Post
 from post.permissions import IsOwnerOrReadOnly
 from post.serializers import PostSerializer
 
-
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
+
+    def post(self, request, format=None):
+        import pdb; pdb.set_trace()
+        return super(PostViewSet, self).post(request, format)
+
+    def create(self, request, *args, **kwargs):
+        import pdb; pdb.set_trace()
+        return super(PostViewSet, self).create(request, *args, **kwargs)
 
     def get_queryset(self):
         qs = super(self).get_queryset()
