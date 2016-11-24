@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'rest_framework',
+    #'django.contrib.sites',
     # 'django.contrib.gis',
     'core',
     'like',
@@ -50,6 +49,7 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     'oauth2_provider',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -188,3 +188,5 @@ try:
 except ImportError:
     pass
 
+
+BROKER_URL = 'redis://localhost:6379/0'

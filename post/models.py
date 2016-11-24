@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 # from django.contrib.gis.db import models
 from pet.models import Pet
 
+
 class UserFullName(User):
     class Meta:
         proxy = True
@@ -15,17 +16,19 @@ class UserFullName(User):
     def __unicode__(self):
         return self.get_username()
 
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=u'Автор', related_name='posts')
-    #author_name = UserFullName(author)
+    # author_name = UserFullName(author)
     date_created = models.DateTimeField(verbose_name=u'Дата публикации', auto_now_add=True)
     title = models.CharField(verbose_name=u'Заголовок', max_length=140)
     text = models.TextField(verbose_name=u'Текст')
-    #picture = models.ImageField(null=True)
-    #last_changes = models.DateTimeField(auto_now=True, verbose_name=u'Время последнего редактирования')
-    #pet = models.ManyToManyField(Pet, verbose_name=u'Идентификатор животного')
-    #location_latitude = models.FloatField(verbose_name=u'Широта', default='-1')
-    #location_longitude = models.FloatField(verbose_name=u'Долгота', default='-1')
+
+    # picture = models.ImageField(null=True)
+    # last_changes = models.DateTimeField(auto_now=True, verbose_name=u'Время последнего редактирования')
+    # pet = models.ManyToManyField(Pet, verbose_name=u'Идентификатор животного')
+    # location_latitude = models.FloatField(verbose_name=u'Широта', default='-1')
+    # location_longitude = models.FloatField(verbose_name=u'Долгота', default='-1')
 
     def __unicode__(self):
         return self.title
@@ -37,3 +40,19 @@ class Post(models.Model):
 
     def get_cent_answers_channel_name(self):
         return "post_%d" % self.id
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=u'Автор', related_name='comment')
+    date_created = models.DateTimeField(verbose_name=u'Дата публикации', auto_now_add=True)
+    text = models.TextField(verbose_name=u'Текст')
+    refer_to = models.ForeignKey(Post, verbose_name=u'Комментарий', related_name='comment')
+
+    def __unicode__(self):
+        return self.text
+
+    class Meta:
+        verbose_name = u'Коммент'
+        verbose_name_plural = u'Комменты'
+        ordering = ('-date_created',)
+
